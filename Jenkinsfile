@@ -7,7 +7,7 @@ pipeline {
 
         stage('Build docker image') {
             steps {  
-                sh 'docker build -t myapp/flask:$BUILD_NUMBER .'
+                sh 'docker build -t naaziim/jenkins-docker:$BUILD_NUMBER .'
             }
         }
         stage('login to dockerhub') {
@@ -17,7 +17,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push myapp/flask:$BUILD_NUMBER'
+                sh 'docker push naaziim/jenkins-docker:$BUILD_NUMBER'
             }
         }
 }
